@@ -30,8 +30,8 @@ Multichar_Symbols
 %<rpar%> ! parenthèses fermantes
 
 ! Number morphology
-%<n%>%<sg%>  ! Singulier
-%<n%>%<pl%>  ! Pluriel
+%<n%> %<sg%>  ! Singulier
+%<n%> %<pl%>  ! Pluriel
 ! Morphology persons
 
 %<p1%> ! Première personne
@@ -40,18 +40,18 @@ Multichar_Symbols
 
 
 ! Noun Classes
-%<n%>%<cl1%> ! Marqueur de classe 1
-%<n%>%<cl2%> ! Marqueur de classe 1
-%<n%>%<cl3%> ! Marqueur de classe 3
-%<n%>%<cl4%> ! Marqueur de classe 4
-%<n%>%<cl5%> ! Marqueur de classe 5
-%<n%>%<cl6%> ! Marqueur de classe 6
-%<n%>%<cl7%> ! Marqueur de classe 7
-%<n%>%<cl8%> ! Marqueur de classe 8
-%<n%>%<cl9%> ! Marqueur de classe 9
-%<n%>%<cl10%> ! Marqueur de classe 10
-%<n%>%<cl13%> ! Marqueur de classe 13
-%<n%>%<cl14%> ! Marqueur de classe 14
+%<n%> %<cl1%> ! Marqueur de classe 1
+%<n%> %<cl2%> ! Marqueur de classe 1
+%<n%> %<cl3%> ! Marqueur de classe 3
+%<n%> %<cl4%> ! Marqueur de classe 4
+%<n%> %<cl5%> ! Marqueur de classe 5
+%<n%> %<cl6%> ! Marqueur de classe 6
+%<n%> %<cl7%> ! Marqueur de classe 7
+%<n%> %<cl8%> ! Marqueur de classe 8
+%<n%> %<cl9%> ! Marqueur de classe 9
+%<n%> %<cl10%> ! Marqueur de classe 10
+%<n%> %<cl13%> ! Marqueur de classe 13
+%<n%> %<cl14%> ! Marqueur de classe 14
 
 ! Infinitive marker
 %<inf%> ! Infinitive
@@ -59,9 +59,48 @@ Multichar_Symbols
 ! Other symbols
 %>      ! Morpheme boundary
 
+!! to move tags at the end
+
+@P.NTAG.ON@
+@R.NTAG.ON@
+@P.CL1.ON@
+@R.CL1.ON@
+@P.CL2.ON@
+@R.CL2.ON@
+@P.CL3.ON@
+@R.CL3.ON@
+@P.CL4.ON@
+@R.CL4.ON@
+@P.CL5.ON@
+@R.CL5.ON@
+@P.CL6.ON@
+@R.CL6.ON@
+@P.CL7.ON@
+@R.CL7.ON@
+@P.CL8.ON@
+@R.CL8.ON@
+@P.CL9.ON@
+@R.CL9.ON@
+@P.CLX.ON@
+@R.CLX.ON@
+@P.CL11.ON@
+@R.CL11.ON@
+@P.CL12.ON@
+@R.CL12.ON@
+@P.CL13.ON@
+@R.CL13.ON@
+@P.CL14.ON@
+@R.CL14.ON@
+@P.SG.ON@
+@R.SG.ON@
+@P.PL.ON@
+@R.PL.ON@
+
+
 LEXICON Root
 !! LEXICONS per class
 
+NOUN ;
 Prefixes ;
 POSS ;
 DEM ;
@@ -78,24 +117,51 @@ PROPN ;
 CONN ;
 CNJCOO ;
 
+LEXICON ENDLEX_POS
+
+@R.NTAG.ON@%<n%>:@R.NTAG.ON@ ENDLEX_CL ;
+
+LEXICON ENDLEX_CL 
+
+@R.CL1.ON@%<cl1%>:@R.CL1.ON@ ENDLEX_NUM ;
+@R.CL2.ON@%<cl2%>:@R.CL2.ON@ ENDLEX_NUM ;
+@R.CL3.ON@%<cl3%>:@R.CL3.ON@ ENDLEX_NUM ;
+@R.CL4.ON@%<cl4%>:@R.CL4.ON@ ENDLEX_NUM ;
+@R.CL5.ON@%<cl5%>:@R.CL5.ON@ ENDLEX_NUM ;
+@R.CL6.ON@%<cl6%>:@R.CL6.ON@ ENDLEX_NUM ;
+@R.CL7.ON@%<cl7%>:@R.CL7.ON@ ENDLEX_NUM ;
+@R.CL8.ON@%<cl8%>:@R.CL8.ON@ ENDLEX_NUM ;
+@R.CL9.ON@%<cl9%>:@R.CL9.ON@ ENDLEX_NUM ;
+@R.CLX.ON@%<cl10%>:@R.CLX.ON@ ENDLEX_NUM ;
+@R.CL11.ON@%<cl11%>:@R.CL11.ON@ ENDLEX_NUM ;
+@R.CL12.ON@%<cl11%>:@R.CL12.ON@ ENDLEX_NUM ;
+@R.CL13.ON@%<cl11%>:@R.CL13.ON@ ENDLEX_NUM ;
+@R.CL14.ON@%<cl11%>:@R.CL14.ON@ ENDLEX_NUM ;
+
+LEXICON ENDLEX_NUM
+
+@R.SG.ON@%<sg%>:@R.SG.ON@ # ;
+@R.PL.ON@%<pl%>:@R.PL.ON@ # ;
+
+
 LEXICON NOUN
 
-%<n%>: NOUN_CL ;
+@P.NTAG.ON@ NOUN_CL ;
 
 LEXICON NOUN_CL
 
-%<cl1%>:0 NOUN_CL1 ;
-%<cl2%>:0 NOUN_CL2 ;
-%<cl3%>:0 NOUN_CL3 ;
-%<cl4%>:0 NOUN_CL4 ;
-%<cl5%>:0 NOUN_CL5 ;
-%<cl6%>:0 NOUN_CL6 ;
-%<cl7%>:0 NOUN_CL7 ;
-%<cl8%>:0 NOUN_CL8 ;
-%<cl9%>:0 NOUN_CL9 ;
-%<cl10%>:0 NOUN_CL10 ;
-%<cl13%>:0 NOUN_CL13 ;
-%<cl14%>:0 NOUN_CL14 ;
+@P.CL1.ON@ NOUN_CL1 ;
+@P.CL2.ON@ NOUN_CL2 ;
+@P.CL3.ON@ NOUN_CL3 ;
+@P.CL4.ON@ NOUN_CL4 ;
+@P.CL5.ON@ NOUN_CL5 ;
+@P.CL6.ON@ NOUN_CL6 ;
+@P.CL7.ON@ NOUN_CL7 ;
+@P.CL8.ON@ NOUN_CL8 ;
+@P.CL9.ON@ NOUN_CL9 ;
+@P.CLX.ON@ NOUN_CL10 ;
+@P.CL13.ON@ NOUN_CL13 ;
+@P.CL14.ON@ NOUN_CL14 ;
 
 
  LEXICON Prefixes
@@ -112,34 +178,34 @@ LEXICON NOUN_CL
 
 LEXICON NOUN_CL1
 
-%<sg%>:m NOUN_CL1_M ;
-%<sg%>:n NOUN_CL1_N ;
-%<sg%>:0 NOUN_CL1_ZERO ;
+@P.SG.ON@:@P.SG.ON@m NOUN_CL1_M ;
+@P.SG.ON@:@P.SG.ON@n NOUN_CL1_N ;
+@P.SG.ON@:@P.SG.ON@0 NOUN_CL1_ZERO ;
 
 LEXICON NOUN_CL2
 
-%<pl%>:ba NOUN_CL2_BA ;
-%<pl%>:b NOUN_CL2_B ;
+@P.PL.ON@:@P.PL.ON@ba NOUN_CL2_BA ;
+@P.PL.ON@:@P.PL.ON@b NOUN_CL2_B ;
 
 LEXICON NOUN_CL3
 
-%<sg%>:0 NOUN_CL3_ZERO ;
+@P.SG.ON@:@P.SG.ON@0 NOUN_CL3_ZERO ;
 
 LEXICON NOUN_CL6
 
-%<pl%>:ma NOUN_CL6_MA ;
+@P.PL.ON@:@P.PL.ON@ma NOUN_CL6_MA ;
 
 LEXICON NOUN_CL7
 
-%<sg%>:ki NOUN_CL7_KI ;
+@P.SG.ON@:@P.SG.ON@ki NOUN_CL7_KI ;
 
 LEXICON NOUN_CL8
 
-%<pl%>:bi NOUN_CL8_BI ;
+@P.PL.ON@:@P.PL.ON@bi NOUN_CL8_BI ;
 
 LEXICON NOUN_CL14
 
-%<sg%>:pw NOUN_CL14_PW ;
+@P.SG.ON@:@P.SG.ON@pw NOUN_CL14_PW ;
 
 
 LEXICON CONN
@@ -317,52 +383,52 @@ LEXICON RegConnInfl
 
 LEXICON NOUN_CL1_M
 
-uund # ; ! "mut"
-aay:ɔɔy # ; ! "maange"
+uund ENDLEX_POS ; ! "mut"
+aay:ɔɔy ENDLEX_POS ; ! "maange"
 
 
 LEXICON NOUN_CL1_N
 
-gɔs:kɔs # ; !
-kon:kon # ; ! "basôgôl"
-tɛ # ; ! "ta"
-ti # ; ! "Bati"
+gɔs:kɔs ENDLEX_POS ; !
+kon:kon ENDLEX_POS ; ! "basôgôl"
+tɛ ENDLEX_POS ; ! "ta"
+ti ENDLEX_POS ; ! "Bati"
 
 
 LEXICON NOUN_CL1_ZERO
 
-tɛ # ; ! "ta"
+tɛ ENDLEX_POS ; ! "ta"
 
 LEXICON NOUN_CL2_BA
 
-kɔs:gɔs # ; ! "nwaa"
-kaand # ; ! "mudaa"
-kon # ; ! "sôgôl"
+kɔs:gɔs ENDLEX_POS ; ! "nwaa"
+kaand ENDLEX_POS ; ! "mudaa"
+kon ENDLEX_POS ; ! "sôgôl"
 
 LEXICON NOUN_CL2_B
 
-uund:eend # ; ! "bôt"
-ɔɔy:aay # ; ! "enfants"
+uund:eend ENDLEX_POS ; ! "bôt"
+ɔɔy:aay ENDLEX_POS ; ! "enfants"
 
 LEXICON NOUN_CL3_ZERO
 
-ngoynin # ; ! "nŋaŋ"
-ntɛbɛt # ; ! "hɔp"
+ngoynin ENDLEX_POS ; ! "nŋaŋ"
+ntɛbɛt ENDLEX_POS ; ! "hɔp"
 
 LEXICON NOUN_CL7_KI
 
-kende # ; ! "liwanda"
-sɛɛnd # ; ! "jol"
+kende ENDLEX_POS ; ! "liwanda"
+sɛɛnd ENDLEX_POS ; ! "jol"
 
 
 LEXICON NOUN_CL6_MA
 
-ak # ; ! "manwii"
+ak ENDLEX_POS ; ! "manwii"
 
 
 LEXICON NOUN_CL14_PW
 
-ak # ; ! "nwii"
+ak ENDLEX_POS ; ! "nwii"
 
 
 LEXICON VerbRoot1
@@ -420,3 +486,4 @@ am # ; ! "wem (possessif de classe 1, première personne du pluriel)"
 ! https://github.com/hfst/
 ! http://www.cis.upenn.edu/~cis639/docs/lexc.html
 ! http://wiki.apertium.org/wiki/Hfst
+! vim: set ft=xfst-lexc:
