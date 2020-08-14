@@ -57,7 +57,7 @@ Multichar_Symbols
 %<inf%> ! Infinitive
 
 ! Other symbols
-%>      ! Morpheme boundary
+! %>     Morpheme boundary
 
 !! to move tags at the end
 
