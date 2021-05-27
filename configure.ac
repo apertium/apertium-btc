@@ -1,6 +1,6 @@
 AC_PREREQ(2.52)
 
-AC_INIT([Apertium btc], [0.1.0], [tommi.antero.pirinen@uni-hamburg.de], [apertium-btc], [http://wiki.apertium.org/wiki/Apertium-btc])
+AC_INIT([Apertium btc], [0.1.0], [tommi.antero.pirinen@uni-hamburg.de], [apertium-btc], [https://wiki.apertium.org/wiki/Apertium-btc])
 AM_INIT_AUTOMAKE
 
 AC_PROG_LN_S
