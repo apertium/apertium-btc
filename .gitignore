@@ -53,3 +53,10 @@ autom4te.cache
 /config.log
 /config.status
 /test/*-output.txt
+/*.zhfst
+/.DS_Store
+/Makefile.in
+/*.mode
+/*-*.prob
+/config.in
+/config
